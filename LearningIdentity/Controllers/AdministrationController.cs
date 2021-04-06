@@ -37,7 +37,7 @@ namespace LearningIdentity.Controllers
                 var result = await _roleManager.CreateAsync(identityRole);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("ListRoles", "home");
                 }
                 foreach (var item in result.Errors)
                 {
@@ -45,6 +45,13 @@ namespace LearningIdentity.Controllers
                 }
             }        
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult ListRoles()
+        {
+            var roles = _roleManager.Roles;
+            return View(roles);
         }
     }
 }
