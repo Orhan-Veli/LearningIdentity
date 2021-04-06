@@ -45,9 +45,7 @@ namespace LearningIdentity
                 var policy = new AuthorizationPolicyBuilder()
                     .RequireAuthenticatedUser()
                     .Build();
-
-                options.Filters.Add(new AuthorizeFilter(policy));
-            
+                options.Filters.Add(new AuthorizeFilter(policy));            
             });
         }
 
