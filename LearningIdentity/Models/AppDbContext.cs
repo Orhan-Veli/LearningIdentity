@@ -15,7 +15,7 @@ namespace LearningIdentity.Models
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connection = @"Server=ORHAN\TEW_SQLEXPRESS;Database=Identity;Trusted_Connection=True;";
+            var connection = @"Server=ORHAN\TEW_SQLEXPRESS;Database=Identity;Trusted_Connection=True;MultipleActiveResultSets=true";
             optionsBuilder.UseSqlServer(connection);
         }
         protected override void OnModelCreating(ModelBuilder builder)
